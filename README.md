@@ -2,7 +2,7 @@
 
 In this project I implemented an autoencoder that compresses(encodes) the large CSI matrice of massive MIMO communication at user side and transmit this comprtessed matrice to the base station which is required for FDD duplexing scenarios. The network summary is follows.
 
-Layer (type)                    Output Shape         Param #     Connected to                     
+Layer (type)                    Output Shape         Param Num     Connected to                     
 ==================================================================================================
 input_1 (InputLayer)            [(None, 2, 32, 32)]  0                                            
 __________________________________________________________________________________________________
