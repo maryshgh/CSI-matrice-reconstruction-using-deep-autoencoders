@@ -47,7 +47,7 @@ def residual_block(x):
   return x
 
 def residual_network(x, residual_num, encoded_dim):
-    # Decoder convolutional layer followed with batch normalization and leaky ReLU as activation 
+    # Encoder convolutional layer followed with batch normalization and leaky ReLU as activation 
     x = Conv2D(2, (3, 3), padding='same', data_format="channels_first")(x)
     x = BatchNormalization()(x)
     x = LeakyReLU()(x)
@@ -56,7 +56,7 @@ def residual_network(x, residual_num, encoded_dim):
     # change the dimension of the output of encoder to the desired dimension defined as encoded_dim
     encoded = Dense(encoded_dim, activation='linear')(x) # encoder output
     
-    # Encoder part
+    # Decoder part
     x = Dense(image_size, activation='linear')(encoded)
     x = Reshape((image_channels, image_height, image_width,))(x)
     # Add residula_num number of residula blocks
